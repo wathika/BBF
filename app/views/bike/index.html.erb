@@ -5,26 +5,25 @@
 
     <div class="form-group">
       <%= f.label :motorNo, "Motor Serial no." %>
-      <%= f.text_field :motorNo, id: "motor-no-input", placeholder: "BBF(M)N00000000" %>
+      <%= f.text_field :motorNo, id: "motor-no-input", placeholder: "BBF(M)N00000000", required: true %>
     </div>
     <div class="form-group">
       <%= f.label :batteryNo, "Battery Serial no." %>
-      <%= f.text_field :batteryNo, placeholder: "BBF(B)N00000000" %>
+      <%= f.text_field :batteryNo, id: "battery-no-input", placeholder: "BBF(B)N00000000", required: true %>
     </div>
     <div class="form-group">
       <%= f.label :chargerNo, "Charger Serial no." %>
-      <%= f.text_field :chargerNo, placeholder: "BBF(C)N00000000" %>
+      <%= f.text_field :chargerNo, id: "charger-no-input", placeholder: "BBF(C)N00000000", required: true %>
     </div>
     <div class="form-group">
       <%= f.label :chargerNo, "Bike Colour" %>
       <%= f.select :colour , options_for_select([
-        ["Choose Bike Colour"],
         "Red",
         "Pink",
         "Blue",
         "Black",
         "Gold"
-        ]), {}, { class: "custom-select" } %>
+        ]), { include_blank: "Choose bike colour" }, { class: "custom-select", id: "bike-colour-input", required: true } %>
     </div>
     <%= f.submit "Save bike", class: "btn btn-primary" %>
 
