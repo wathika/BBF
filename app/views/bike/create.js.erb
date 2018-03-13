@@ -1,0 +1,16 @@
+
+var  bikeList = document.getElementById('bike-list')
+var newBike = "<%= escape_javascript(render "bike", bike: @bike) %>"
+var motorNoInput = document.getElementById('motor-no-input')
+var batteryNoInput = document.getElementById('battery-no-input')
+var chargerNoInput = document.getElementById('charger-no-input')
+
+var div = document.createElement('div')
+
+div.innerHTML = newBike
+
+bikeList.appendChild(div.firstChild)
+
+motorNoInput.value = ''
+batteryNoInput.value = ''
+chargerNoInput.value = ''

@@ -5,7 +5,7 @@
 
     <div class="form-group">
       <%= f.label :motorNo, "Motor Serial no." %>
-      <%= f.text_field :motorNo, placeholder: "BBF(M)N00000000" %>
+      <%= f.text_field :motorNo, id: "motor-no-input", placeholder: "BBF(M)N00000000" %>
     </div>
     <div class="form-group">
       <%= f.label :batteryNo, "Battery Serial no." %>
@@ -32,8 +32,10 @@
 </div>
 <div class="container">
   <div class="row">
-    <div class="bikes-container col-md-6">
-      Hello bikes
+    <div class="bikes-container col-md-6" id="bike-list">
+      <% @bikes.each do |bike| %>
+        <%= render 'bike', bike: bike %>
+      <% end %>
     </div>
   </div>
 </div>
