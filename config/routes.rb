@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  get 'bike/index'
+
+
+  get 'bikes', to: 'bike#index'
+
+  post 'bikes', to: 'bike#create'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  motorNo: MyString
+  batteryNo: MyString
+  chargerNo: MyString
+  colour: MyString
+
+two:
+  motorNo: MyString
+  batteryNo: MyString
+  chargerNo: MyString
+  colour: MyString
