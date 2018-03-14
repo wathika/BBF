@@ -1,5 +1,41 @@
+//ERROR HANDLING
 
-var  bikeList = document.getElementById('bike-list')
+//remove old validation messages
+//$(".notice").remove();
+//const el = document.querySelector('.notice').remove();
+
+
+var motorNoField = document.getElementById('motor-no')
+var batteryNoField = document.getElementById('battery-no')
+var chargerNoField = document.getElementById('charger-no')
+var colourField = document.getElementById('bike-colour')
+
+var errorMotorNoDiv = document.createElement('div')
+var errorBatteryNoDiv = document.createElement('div')
+var errorChargerNoDiv = document.createElement('div')
+var errorBikeColour = document.createElement('div')
+errorMotorNoDiv.className = "invalid-feedback"
+errorBatteryNoDiv.className = "invalid-feedback"
+errorChargerNoDiv.className = "invalid-feedback"
+errorBikeColour.className = "invalid-feedback"
+
+errorMotorNoDiv.innerHTML = "<%= escape_javascript(@errorMotorNo[0]) %>"
+errorBatteryNoDiv.innerHTML = "<%= escape_javascript(@errorBatteryNo[0]) %>"
+errorChargerNoDiv.innerHTML = "<%= escape_javascript(@errorChargerNo[0]) %>"
+errorBikeColour.innerHTML = "<%= escape_javascript(@errorBikeColour) %>"
+
+motorNoField.appendChild(errorMotorNoDiv)
+batteryNoField.appendChild(errorBatteryNoDiv)
+chargerNoField.appendChild(errorChargerNoDiv)
+colourField.appendChild(errorBikeColour)
+
+//DISPLAY SUCCESS MESSAGE
+//$("#helpBlock").append('<div class="notice"><%=escape_javascript(flash.discard(:notice))%></div>');
+var span = document.getElementById('helpBlock')
+span.innerHTML = '<div class="notice"><%=escape_javascript(flash.discard(:notice))%></div>'
+
+
+var bikeList = document.getElementById('bike-list')
 var newBike = "<%= escape_javascript(render "bike", bike: @bike) %>"
 var motorNoInput = document.getElementById('motor-no-input')
 var batteryNoInput = document.getElementById('battery-no-input')
@@ -12,7 +48,15 @@ div.innerHTML = newBike
 
 bikeList.appendChild(div.firstChild)
 
-motorNoInput.value = ''
-batteryNoInput.value = ''
-chargerNoInput.value = ''
-colourInput.val('None')
+// motorNoInput.value = ''
+// batteryNoInput.value = ''
+// chargerNoInput.value = ''
+//colourInput.val('None')
+<% if @resetForm == "1" %>
+  document.getElementsByClassName("form-horizontal")[0].reset()
+<% else %>
+  motorNoInput.classList.add('is-invalid')
+  batteryNoInput.classList.add('is-invalid')
+  chargerNoInput.classList.add('is-invalid')
+  colourInput.classList.add('is-invalid')
+<% end %>
