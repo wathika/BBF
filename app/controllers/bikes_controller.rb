@@ -9,8 +9,10 @@ class BikesController < ApplicationController
     respond_to do |format|
       if @bike.save
         format.js
+        @resetForm = "1"
       else
         format.js
+        @resetForm = "0"
       end
     end
   end
