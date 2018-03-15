@@ -10,10 +10,11 @@ var batteryNoField = document.getElementById('battery-no')
 var chargerNoField = document.getElementById('charger-no')
 var colourField = document.getElementById('bike-colour')
 
-var errorMotorNoDiv = document.createElement('div')
-var errorBatteryNoDiv = document.createElement('div')
-var errorChargerNoDiv = document.createElement('div')
-var errorBikeColour = document.createElement('div')
+var errorMotorNoDiv = document.getElementById('error-motor-no')
+var errorBatteryNoDiv = document.getElementById('error-battery-no')
+var errorChargerNoDiv = document.getElementById('error-charger-no')
+var errorBikeColour = document.getElementById('error-colour')
+
 errorMotorNoDiv.className = "invalid-feedback"
 errorBatteryNoDiv.className = "invalid-feedback"
 errorChargerNoDiv.className = "invalid-feedback"
@@ -55,8 +56,30 @@ bikeList.appendChild(div.firstChild)
 <% if @resetForm == "1" %>
   document.getElementsByClassName("form-horizontal")[0].reset()
 <% else %>
-  motorNoInput.classList.add('is-invalid')
+  //motorNoInput.classList.add('is-invalid')
   batteryNoInput.classList.add('is-invalid')
   chargerNoInput.classList.add('is-invalid')
   colourInput.classList.add('is-invalid')
+<% end %>
+
+<% if @bike.errors["motorNo"].length === 0 %>
+  motorNoInput.classList.remove('is-invalid')
+  motorNoInput.classList.add('is-valid')
+<% else %>
+    motorNoInput.classList.add('is-invalid')
+<% end %>
+
+<% if @bike.errors["batteryNo"].length === 0 %>
+  batteryNoInput.classList.remove('is-invalid')
+  batteryNoInput.classList.add('is-valid')
+<% end %>
+
+<% if @bike.errors["chargerNo"].length === 0 %>
+  chargerNoInput.classList.remove('is-invalid')
+  chargerNoInput.classList.add('is-valid')
+<% end %>
+
+<% if @bike.errors["colour"].length === 0 %>
+  colourInput.classList.remove('is-invalid')
+  colourInput.classList.add('is-valid')
 <% end %>

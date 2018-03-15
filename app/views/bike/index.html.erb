@@ -10,18 +10,21 @@
             <div class="" id="motor-no">
               <%= f.label :motorNo, "Motor Serial no." %>
               <%= f.text_field :motorNo, class: "form-control", id: "motor-no-input", placeholder: "BBF(M)N00000000"%>
+              <div id="error-motor-no"></div>
             </div>
           </div>
           <div class="form-group">
             <div class="" id="battery-no">
               <%= f.label :batteryNo, "Battery Serial no." %>
               <%= f.text_field :batteryNo, class: "form-control", id: "battery-no-input", placeholder: "BBF(B)N00000000" %>
+              <div id="error-battery-no"></div>
             </div>
           </div>
           <div class="form-group">
             <div class="" id="charger-no">
               <%= f.label :chargerNo, "Charger Serial no." %>
               <%= f.text_field :chargerNo, class: "form-control", id: "charger-no-input", placeholder: "BBF(C)N00000000" %>
+              <div id="error-charger-no"></div>
             </div>
           </div>
           <div class="form-group">
@@ -34,6 +37,7 @@
                 "Black",
                 "Gold"
                 ]), { include_blank: "Choose bike colour" }, { class: "custom-select form-control", id: "bike-colour-input" } %>
+                <div id="error-colour"></div>
               </div>
           </div>
           <div class="">
