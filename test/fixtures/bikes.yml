@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  motorNo: MyString
+  colour: MyString
+
+two:
+  motorNo: MyString
+  colour: MyString

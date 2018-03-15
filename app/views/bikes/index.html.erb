@@ -1,0 +1,71 @@
+<div class="container">
+  <h1>Add Bike, Battery or Charger to BBF records</h1>
+
+  <div class="row">
+    <h5>New bike</h5>
+    <%= form_with model: @bike, :html => {:class => "form-horizontal"} do |f| %>
+
+      <div class="form-group">
+        <div class="" id="motor-no">
+          <%= f.label :motorNo, "Motor Serial no." %>
+          <%= f.text_field :motorNo, class: "form-control", id: "motor-no-input", placeholder: "BBF(M)N00000000"%>
+          <div id="error-motor-no"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :colour, "Bike colour." %>
+        <%= f.select :colour, options_for_select([
+          "Red",
+          "Pink",
+          "Blue",
+          "Black",
+          "Gold"
+          ]), { include_blank: "Choose bike colour" }, { class: "custom-select form-control", id: "bike-colour-input" } %>
+          <div id="error-colour"></div>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save bike", class: "btn btn-primary" %>
+      </div>
+
+    <% end %>
+  </div>
+
+
+  <div class="row">
+    <h5>New Battery</h5>
+    <%= form_with model: @bike, :html => {:class => "form-horizontal"} do |f| %>
+
+      <div class="form-group">
+        <div class="" id="motor-no">
+          <%= f.label :motorNo, "Motor Serial no." %>
+          <%= f.text_field :motorNo, class: "form-control", id: "motor-no-input", placeholder: "BBF(M)N00000000"%>
+          <div id="error-motor-no"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save battery", class: "btn btn-primary" %>
+      </div>
+
+    <% end %>
+  </div>
+
+
+  <div class="row">
+    <h5>New Charger</h5>
+    <%= form_with model: @bike, :html => {:class => "form-horizontal"} do |f| %>
+
+      <div class="form-group">
+        <div class="" id="motor-no">
+          <%= f.label :motorNo, "Motor Serial no." %>
+          <%= f.text_field :motorNo, class: "form-control", id: "motor-no-input", placeholder: "BBF(M)N00000000"%>
+          <div id="error-motor-no"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save charger", class: "btn btn-primary" %>
+      </div>
+
+    <% end %>
+  </div>
+
+</div>
