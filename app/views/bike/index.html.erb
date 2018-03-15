@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-8 col-md-offset-2">
       <h1> Add new bike </h1>
 
       <div class="new-bike-form">
@@ -47,15 +47,14 @@
           </div>
         <% end %>
       </div>
-      <div class="container">
         <div class="row">
-          <div class="bikes-container col-md-6" id="bike-list">
+          <div class="bikes-container col-md-8" id="bike-list">
+            <h4> THIS IS A PREVIEW OF WHAT IS SAVED TO DB! </h4>
             <% @bikes.each do |bike| %>
               <%= render 'bike', bike: bike %>
             <% end %>
           </div>
         </div>
-      </div>
     </div>
   </div>
 </div>
