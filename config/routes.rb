@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-
+  root 'pages#index'
   get 'bikes', to: 'pages#index'
 
   post '/bikes', to: 'bikes#new'
