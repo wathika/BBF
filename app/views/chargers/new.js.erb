@@ -1,0 +1,17 @@
+
+
+//ERROR HANDLING
+
+//remove previous validation errrors
+
+var errorChargerNoDiv = document.getElementById('error-charger-no')
+
+var chargerNoInput = document.getElementById('charger-no-input')
+
+errorChargerNoDiv.innerHTML = "<%= escape_javascript(@errorChargerNo[0]) %>"
+
+<% if @resetForm == "1" %>
+  document.getElementById("charger-form").reset()
+<% else %>
+  chargerNoInput.classList.add('is-invalid')
+<% end %>
