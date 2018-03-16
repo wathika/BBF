@@ -4,7 +4,7 @@
 
     <div class="form-group">
         <%= f.label :motorNo, "Motor Serial no." %>
-        <%= f.text_field :motorNo, class: "form-control", id: "motor-no-input", placeholder: "BBF(M)N00000000"%>
+        <%= f.number_field :motorNo, class: "form-control", id: "motor-no-input", placeholder: "BBF(M)N00000000", max: 99999999%>
         <div id="error-motor-no" class="invalid-feedback"></div>
     </div>
     <div class="form-group">

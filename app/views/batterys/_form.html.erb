@@ -4,7 +4,7 @@
 
     <div class="form-group">
         <%= f.label :batteryNo, "Battery Serial no." %>
-        <%= f.text_field :batteryNo, class: "form-control", id: "battery-no-input", placeholder: "BBF(B)N00000000"%>
+        <%= f.number_field :batteryNo, class: "form-control", id: "battery-no-input", placeholder: "BBF(B)N00000000", max: 99999999%>
         <div id="error-battery-no" class="invalid-feedback"></div>
     </div>
     <div class="form-group">
