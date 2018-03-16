@@ -1,0 +1,2 @@
+module BatterysHelper
+end

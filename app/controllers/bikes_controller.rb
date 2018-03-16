@@ -1,7 +1,4 @@
 class BikesController < ApplicationController
-  def index
-    @bike = Bike.new
-  end
 
   def new
     @bike = Bike.new(bike_params)

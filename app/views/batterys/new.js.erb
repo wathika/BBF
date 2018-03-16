@@ -1,0 +1,17 @@
+//ERROR HANDLING
+
+
+//remove old validation messages
+
+
+var errorBatteryNoDiv = document.getElementById('error-battery-no')
+
+var batteryNoInput = document.getElementById('battery-no-input')
+
+errorBatteryNoDiv.innerHTML = "<%= escape_javascript(@errorBatteryNo[0]) %>"
+
+<% if @resetForm == "1" %>
+  document.getElementById("battery-form").reset()
+<% else %>
+  batteryNoInput.classList.add('is-invalid')
+<% end %>

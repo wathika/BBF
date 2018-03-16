@@ -16,7 +16,7 @@ errorMotorNoDiv.innerHTML = "<%= escape_javascript(@errorMotorNo[0]) %>"
 errorColourDiv.innerHTML = "<%= escape_javascript(@errorColour[0]) %>"
 
 <% if @resetForm == "1" %>
-  document.getElementsByClassName("form-horizontal")[0].reset()
+  document.getElementById("bike-form").reset()
 <% else %>
   motorNoInput.classList.add('is-invalid')
   colourInput.classList.add('is-invalid')
