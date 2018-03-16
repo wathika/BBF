@@ -3,14 +3,35 @@
 
   <div class="row">
     <%= render 'bikes/form' %>
-  </div>
 
-  <div class="row">
     <%= render 'batterys/form' %>
+
+    <%= render 'chargers/form' %>
   </div>
 
+
   <div class="row">
-    <%= render 'chargers/form' %>
+    <h4> THIS IS A PREVIEW OF WHAT IS SAVED TO DB! </h4>
+    <div class="col-md-4">
+      List of Bikes:
+      <% @bikes.each do |bike| %>
+        <%= render 'bikes/bike', bike: bike %>
+      <% end %>
+    </div>
+
+    <div class="col-md-4">
+      List of Batteries:
+      <% @batteries.each do |battery| %>
+        <%= render 'batterys/battery', battery: battery %>
+      <% end %>
+    </div>
+
+    <div class="col-md-4">
+      List of Chargers:
+      <% @chargers.each do |charger| %>
+        <%= render 'chargers/charger', charger: charger %>
+      <% end %>
+    </div>
   </div>
 
 </div>

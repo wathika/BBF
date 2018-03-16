@@ -1,13 +1,16 @@
-<h5>New Battery</h5>
-<%= form_with model: @battery, :html => {:class => "form-horizontal", :id => "battery-form"}, remote: true do |f| %>
+<div class="col-md-4">
+  <h5>New Battery</h5>
+  <%= form_with model: @battery, :html => {:class => "form-horizontal", :id => "battery-form"}, remote: true do |f| %>
 
-  <div class="form-group">
-      <%= f.label :batteryNo, "Battery Serial no." %>
-      <%= f.text_field :batteryNo, class: "form-control", id: "battery-no-input", placeholder: "BBF(B)N00000000"%>
-      <div id="error-battery-no" class="invalid-feedback"></div>
-  </div>
-  <div class="form-group">
-    <%= f.submit "Save battery", class: "btn btn-primary", data: {disable_with: "saving..."} %>
-  </div>
+    <div class="form-group">
+        <%= f.label :batteryNo, "Battery Serial no." %>
+        <%= f.text_field :batteryNo, class: "form-control", id: "battery-no-input", placeholder: "BBF(B)N00000000"%>
+        <div id="error-battery-no" class="invalid-feedback"></div>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Save battery", class: "btn btn-primary", data: {disable_with: "saving..."} %>
+    </div>
 
-<% end %>
+  <% end %>
+
+</div>
