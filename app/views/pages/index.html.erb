@@ -10,23 +10,23 @@
   </div>
 
 
+  <h4> THIS IS A PREVIEW OF WHAT IS SAVED TO DB! </h4>
   <div class="row">
-    <h4> THIS IS A PREVIEW OF WHAT IS SAVED TO DB! </h4>
-    <div class="col-md-4">
+    <div class="col-md-4" id="bike-list">
       List of Bikes:
       <% @bikes.each do |bike| %>
         <%= render 'bikes/bike', bike: bike %>
       <% end %>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4" id="battery-list">
       List of Batteries:
       <% @batteries.each do |battery| %>
         <%= render 'batterys/battery', battery: battery %>
       <% end %>
     </div>
 
-    <div class="col-md-4">
+    <div class="col-md-4" id="charger-list">
       List of Chargers:
       <% @chargers.each do |charger| %>
         <%= render 'chargers/charger', charger: charger %>

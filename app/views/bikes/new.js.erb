@@ -21,3 +21,13 @@ errorColourDiv.innerHTML = "<%= escape_javascript(@errorColour[0]) %>"
   motorNoInput.classList.add('is-invalid')
   colourInput.classList.add('is-invalid')
 <% end %>
+
+//Add new input to page via AJAX
+var bikeList = document.getElementById('bike-list')
+var newBike = "<%= escape_javascript( render 'bikes/bike', bike: @bike ) %>"
+
+var div = document.createElement('div')
+
+div.innerHTML = newBike
+
+bikeList.appendChild(div.firstChild)

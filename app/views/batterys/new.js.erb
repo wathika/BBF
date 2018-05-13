@@ -15,3 +15,14 @@ errorBatteryNoDiv.innerHTML = "<%= escape_javascript(@errorBatteryNo[0]) %>"
 <% else %>
   batteryNoInput.classList.add('is-invalid')
 <% end %>
+
+
+//Add new input to page via AJAX
+var batteryList = document.getElementById('battery-list')
+var newBattery = "<%= escape_javascript( render 'batterys/battery', battery: @battery ) %>"
+
+var div = document.createElement('div')
+
+div.innerHTML = newBattery
+
+batteryList.appendChild(div.firstChild)

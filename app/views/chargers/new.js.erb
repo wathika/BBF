@@ -15,3 +15,14 @@ errorChargerNoDiv.innerHTML = "<%= escape_javascript(@errorChargerNo[0]) %>"
 <% else %>
   chargerNoInput.classList.add('is-invalid')
 <% end %>
+
+
+//Add new input to page via AJAX
+var chargerList = document.getElementById('charger-list')
+var newCharger = "<%= escape_javascript( render 'chargers/charger', charger: @charger ) %>"
+
+var div = document.createElement('div')
+
+div.innerHTML = newCharger
+
+chargerList.appendChild(div.firstChild)
